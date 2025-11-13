@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Recycle, Mail, Lock, User, ArrowRight } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AIChatButton } from "@/components/AIChatButton";
+import { LiquidBackground } from "@/components/LiquidBackground";
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -105,21 +106,8 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Nature Background */}
-      <div className="nature-bg">
-        <div className="nature-gradient" />
-        {Array.from({ length: 15 }).map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 15}s`,
-            }}
-          />
-        ))}
-      </div>
+    <LiquidBackground complexity="medium" interactive={true} pointerInjection={true} resolutionScale={0.7}>
+      <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       
       {/* Theme Toggle and AI Chat Button */}
       <div className="fixed top-6 right-6 z-[100] flex items-center gap-3">
@@ -295,7 +283,8 @@ const Auth = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+    </LiquidBackground>
   );
 };
 

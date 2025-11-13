@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogOut, Award, Recycle, Loader2, Leaf, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
-import FluidBackground from "@/components/FluidBackground";
+import { LiquidBackground } from "@/components/LiquidBackground";
 import InteractiveGlassPanel from "@/components/InteractiveGlassPanel";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AIChatButton } from "@/components/AIChatButton";
@@ -69,8 +69,8 @@ const BuyerDashboard = () => {
     : products.filter(p => p.tags?.includes(activeTab));
 
   return (
-    <FluidBackground complexity="medium" interactive={true}>
-      <div className="min-h-screen relative overflow-hidden bg-background/50">
+    <LiquidBackground complexity="medium" interactive={true} pointerInjection={true} resolutionScale={0.75}>
+      <div className="min-h-screen relative overflow-hidden">
         {/* Green Nature Background */}
         <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 dark:from-emerald-950/20 dark:via-green-950/20 dark:to-teal-950/20" />
@@ -268,7 +268,7 @@ const BuyerDashboard = () => {
         </footer>
         </div>
       </div>
-    </FluidBackground>
+    </LiquidBackground>
   );
 };
 

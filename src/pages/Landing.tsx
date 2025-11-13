@@ -8,7 +8,7 @@ import GlassBlurToggle from "@/components/GlassBlurToggle";
 import { GlassIntensityControl } from "@/components/GlassIntensityControl";
 import { LiquidGlassPanel } from "@/components/LiquidGlassPanel";
 import { ParallaxGlass } from "@/components/ParallaxGlass";
-import { FluidBackground } from "@/components/FluidBackground";
+import { LiquidBackground } from "@/components/LiquidBackground";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -43,15 +43,13 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen text-foreground transition-theme relative overflow-hidden">
-      {/* Interactive Fluid Background */}
-      <FluidBackground
-        viscosity={0.001}
-        vorticityStrength={25}
-        interactive={true}
-        complexity="high"
-        resolutionScale={0.7}
-      />
+    <LiquidBackground
+      complexity="high"
+      interactive={true}
+      pointerInjection={true}
+      resolutionScale={0.8}
+    >
+      <div className="min-h-screen text-foreground transition-theme relative overflow-hidden">
 
       {/* Glass Controls */}
       <GlassBlurToggle />
@@ -413,7 +411,8 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </LiquidBackground>
   );
 };
 

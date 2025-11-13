@@ -3,7 +3,7 @@ import { ArrowLeft, ShoppingCart, Award, Recycle, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
-import FluidBackground from "@/components/FluidBackground";
+import { LiquidBackground } from "@/components/LiquidBackground";
 import InteractiveGlassPanel from "@/components/InteractiveGlassPanel";
 import { useCart } from '@/hooks/useCart';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -42,22 +42,8 @@ export default function ProductDetail() {
   };
 
   return (
-    <FluidBackground complexity="medium" interactive={true}>
+    <LiquidBackground complexity="medium" interactive={true} pointerInjection={true} resolutionScale={0.75}>
       <div className="min-h-screen text-foreground transition-theme relative overflow-hidden">
-        {/* Nature Background */}
-        <div className="nature-bg">
-        <div className="nature-gradient" />
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 15}s`,
-            }}
-          />
-          ))}
-        </div>
 
         {/* Header */}
         <header className="border-b sticky top-0 glass-panel z-50 transition-theme">
@@ -170,6 +156,6 @@ export default function ProductDetail() {
         </div>
       </main>
       </div>
-    </FluidBackground>
+    </LiquidBackground>
   );
 }

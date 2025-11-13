@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { User } from "@supabase/supabase-js";
 import { useUserRole } from "@/hooks/useUserRole";
-import FluidRibbons from "@/components/FluidRibbons";
+import { LiquidBackground } from "@/components/LiquidBackground";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -41,13 +41,14 @@ const Index = () => {
 
   if (sessionLoading || roleLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center relative">
-        <FluidRibbons />
-        <div className="text-center relative z-10">
-          <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-muted-foreground">Loading Ecomart...</p>
+      <LiquidBackground complexity="low" interactive={false} resolutionScale={0.5}>
+        <div className="flex min-h-screen items-center justify-center relative">
+          <div className="text-center relative z-10">
+            <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-muted-foreground">Loading Terra Vitta...</p>
+          </div>
         </div>
-      </div>
+      </LiquidBackground>
     );
   }
 

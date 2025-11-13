@@ -4,7 +4,7 @@ import { Users, ShoppingBag, TrendingUp, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import FluidRibbons from "@/components/FluidRibbons";
+import { LiquidBackground } from "@/components/LiquidBackground";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen p-6 relative">
-      <FluidRibbons />
+    <LiquidBackground complexity="low" interactive={true} pointerInjection={false} resolutionScale={0.6}>
+      <div className="min-h-screen p-6 relative">
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -138,7 +138,8 @@ const AdminDashboard = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </LiquidBackground>
   );
 };
 
