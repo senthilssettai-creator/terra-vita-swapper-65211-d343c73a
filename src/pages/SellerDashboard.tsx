@@ -3,7 +3,6 @@ import { Package, Plus, ShoppingBag, LogOut, Recycle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import { LiquidBackground } from "@/components/LiquidBackground";
 
 const SellerDashboard = () => {
   const navigate = useNavigate();
@@ -15,8 +14,21 @@ const SellerDashboard = () => {
   };
 
   return (
-    <LiquidBackground complexity="medium" interactive={true} pointerInjection={true} resolutionScale={0.75}>
-      <div className="min-h-screen p-6 relative overflow-hidden">
+    <div className="min-h-screen p-6 relative overflow-hidden">
+      {/* Nature Background */}
+      <div className="nature-bg">
+        <div className="nature-gradient" />
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 15}s`,
+            }}
+          />
+        ))}
+      </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -100,10 +112,9 @@ const SellerDashboard = () => {
             <Package className="w-12 h-12 mx-auto mb-4 opacity-50" />
             <p>No listings yet. Create your first eco-friendly product!</p>
           </div>
-          </div>
         </div>
       </div>
-    </LiquidBackground>
+    </div>
   );
 };
 
