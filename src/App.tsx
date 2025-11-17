@@ -11,6 +11,7 @@ import SellerDashboard from "./pages/SellerDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
+import LiquidEther from "@/components/LiquidEther";
 import "./App.css";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,14 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* Global Liquid Ether Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <LiquidEther 
+          colors={['#50B498', '#1a1a1a', '#2a2a2a']}
+          className="w-full h-full"
+          style={{ position: 'absolute', top: 0, left: 0 }}
+        />
+      </div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

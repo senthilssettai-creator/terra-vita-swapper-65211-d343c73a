@@ -4,7 +4,6 @@ import { Users, ShoppingBag, TrendingUp, LogOut } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import FluidRibbons from "@/components/FluidRibbons";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -17,7 +16,6 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen p-6 relative">
-      <FluidRibbons />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
